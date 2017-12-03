@@ -1,0 +1,113 @@
+body {
+  font-family: 'Dosis', sans-serif;
+  font-size: 1rem;
+  text-align: center; }
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 4rem;
+  margin: 0; }
+
+h3 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem; }
+
+button {
+  font-family: 'Dosis', sans-serif;
+  font-size: 1rem; }
+
+.playCards {
+  display: block;
+  margin: 10px; }
+
+.helpElement {
+  display: block; }
+
+.help {
+  text-align: left; }
+
+.helpText {
+  display: inline-block;
+  margin-left: 1rem; }
+
+.invisible {
+  display: none; }
+
+.alert {
+  border-radius: 0.25rem;
+  padding: .75rem 1.25rem;
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442;
+  border-width: 0.1rem;
+  border-style: solid; }
+
+.card {
+  display: inline-block;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  width: 4rem;
+  height: 6rem;
+  visibility: hidden;
+  border-radius: 0.25rem;
+  border-color: #000000;
+  border-width: 0.1rem;
+  border-style: solid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.28); }
+
+.playCards .card {
+  margin-top: 0; }
+
+.help .card:first-child,
+.playCards .card:first-child {
+  margin-left: 0; }
+
+.card.red {
+  background: linear-gradient(135deg, #FF0000 22px, #ffffff 22px, #ffffff 24px, transparent 24px, transparent 67px, #ffffff 67px, #ffffff 69px, transparent 69px), linear-gradient(225deg, #FF0000 22px, #ffffff 22px, #ffffff 24px, transparent 24px, transparent 67px, #ffffff 67px, #ffffff 69px, transparent 69px) 0 64px;
+  background-color: #FF0000;
+  background-size: 64px 128px;
+  visibility: visible; }
+
+.card.blue {
+  background-color: white;
+  background-image: radial-gradient(midnightblue 9px, transparent 10px), repeating-radial-gradient(midnightblue 0, midnightblue 4px, transparent 5px, transparent 20px, midnightblue 21px, midnightblue 25px, transparent 26px, transparent 50px);
+  background-size: 30px 30px, 90px 90px;
+  background-position: 0 0;
+  visibility: visible; }
+
+.card.green {
+  background: radial-gradient(circle at 0% 50%, transparent 9px, #000 10px, transparent 11px) 0 10px, radial-gradient(at 100% 100%, transparent 9px, #000 10px, transparent 11px), #00ff00;
+  background-size: 20px 20px;
+  visibility: visible; }
+
+.card.yellow {
+  background-color: #FFFF00;
+  background-image: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), linear-gradient(60deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)), linear-gradient(120deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+  background-size: 70px 120px;
+  visibility: visible; }
+
+.card.purple {
+  background-color: white;
+  background-image: linear-gradient(90deg, rgba(80, 0, 80, 0.5) 50%, transparent 50%), linear-gradient(rgba(80, 0, 80, 0.5) 50%, transparent 50%);
+  background-size: 50px 50px;
+  visibility: visible; }
+
+.textpoints {
+  text-decoration: underline;
+  font-size: 1.5rem; }
+
+@media (min-width: 400px) {
+  .card {
+    height: 9rem;
+    width: 6rem;
+    border-radius: 0.5rem; } }
+
+@media (min-width: 700px) {
+  .help {
+    padding-left: 10%; }
+  .card {
+    height: 15rem;
+    width: 10rem;
+    border-radius: 1rem; } }
+
+/*# sourceMappingURL=cartes.css.map */

@@ -1,0 +1,2 @@
+El codi present en aquesta carpeta està transpilat amb babel i webpack cap a ES5.
+El codi que he escrit en ES6 està junt a l'arxiu index.html i el M6_UF1_Projecte.pdf, a "l'arrel" del projecte.
