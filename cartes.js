@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**************************************************************
   Definició de constants
   * defaultPoints emmagatzema els punts màxims per defecte
