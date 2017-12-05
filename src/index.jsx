@@ -63,21 +63,21 @@ const cards = [
   },
 ]
 
-/*
-  Funció convertNumberToCard(randomNumber)
-  Retorna un objecte card a partir d'un número.
-  Empra l'array cards. Realitza un mod per a no excedir
-  la longitud de l'array.
-  Accepta un paràmetre, randomNumber.
-*/
+/**
+ * Retorna un objecte card a partir d'un número
+ * Empra l'array cards
+ * Realitza un mod per a no excedir la longitud de l'array
+ * @param  {Number} randomNumber Numero aleatori per a generar la carta
+ * @return {Object}              Carta obtinguda a partir del numero aleatori
+ */
 function convertNumberToCard(randomNumber) {
   return cards[Math.abs(randomNumber) % cards.length]
 }
 
 /**
- * Suma els punts aconseguits amb una tirada de cartes.
- * @param {Array} thrownCards Array de les cartes tirades.
- * @return {Number} Punts aconseguits amb la tirada.
+ * Suma els punts aconseguits amb una tirada de cartes
+ * @param {Array} thrownCards Array de les cartes tirades
+ * @return {Number} Punts aconseguits amb la tirada
  */
 function addPoints(thrownCards) {
   let x = 0
@@ -92,9 +92,9 @@ function addPoints(thrownCards) {
  * @param  {String} mode        Mode en que s'està jugant la partida
  * @param  {Number} points      Punts actuals en la partida
  * @param  {Number} throws      Tirades actuals en la partida
- * @param  {Array} thrownCards  Cartes que s'han jugar en la partida actual
+ * @param  {Array}  thrownCards Cartes que s'han jugar en la partida actual
  * @return {Boolean}            Retorna true si s'ha de finalitzar la partida,
- *                              false si s'ha de continuar.
+ *                              false si s'ha de continuar
  */
 function checkEndGame(mode, points, throws, thrownCards) {
   if (mode === 'points' && points >= defaultPoints) return true
@@ -103,6 +103,11 @@ function checkEndGame(mode, points, throws, thrownCards) {
   return false
 }
 
+/**
+ * Element principal de l'aplicació
+ * @param  {Object} props
+ * @extends React
+ */
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -119,6 +124,10 @@ class App extends React.Component {
     }
   }
 
+  /**
+   * Mètode que es crida quan es canvia el nombre de cartes
+   * @param  {SyntheticEvent} e SyntheticEvent generat per l'acció
+   */
   changeNumCards(e) {
     const { value } = e.target
     this.setState({
@@ -126,6 +135,28 @@ class App extends React.Component {
     })
   }
 
+  /**
+   * Mètode que es crida quan es presiona un dels botons per a jugar
+   * @param  {String} mode Mode en que es juga la partida
+   */
+  pressThrowCards(mode) {
+    const { numCards } = this.state
+    if (numCards >= minCards && numCards <= maxCards) this.throwCards(mode, numCards)
+    else {
+      this.setState({
+        errors: [
+          ...this.state.errors,
+          `El número de cartes ha de ser entre ${minCards} i ${maxCards}`,
+        ],
+      })
+    }
+  }
+
+  /**
+   * Mètode a cridar per a realitzar una tirada
+   * @param  {String} pMode    Mode de la partida
+   * @param  {Number} numCards Nombre de cartes a tirar
+   */
   throwCards(pMode, numCards) {
     const randomNumbers = []
     const thrownCards = []
@@ -154,19 +185,6 @@ class App extends React.Component {
       endGame,
       errors: [],
     })
-  }
-
-  pressThrowCards(mode) {
-    const { numCards } = this.state
-    if (numCards >= minCards && numCards <= maxCards) this.throwCards(mode, numCards)
-    else {
-      this.setState({
-        errors: [
-          ...this.state.errors,
-          `El número de cartes ha de ser entre ${minCards} i ${maxCards}`,
-        ],
-      })
-    }
   }
 
   endGame() {
